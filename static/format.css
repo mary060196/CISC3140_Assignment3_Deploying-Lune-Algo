@@ -1,0 +1,140 @@
+/* format.css 
+This file contains the styles used to implement the Luhn Algorithm web application, given
+as the second assignment in the summer 2019 CISC 3140 class. 
+Notes:
+(1) The 'calc()' unit value used below does not contain division or multiplication operations
+(and so it is supported by the Android 4.4 Browser, which has issues with / and *), and it is
+not used to compute 'background-position' (so it is supported by IE9). 'calc()' is not supported
+by Opera Mini.
+(2) There is no 'min-height' attribute within the '.messages' selector, so IE10 and IE11 work
+properly with the 'flex-direction' attribute. It is supported by Opera Mini.
+(3) The 'transform' attribute 'is not supported by Opera Mini. All other browsers support it.
+(4) The Stack Overflow answer in https://stackoverflow.com/a/24808755 tells that the purpose
+of Opera Mini is to reduce battery use, so it does not focus on graphics and styling, which is why
+many features, such as some of those above, are not supported by Opera Mini.
+*/
+
+body 
+{
+  font-family: 'Muli';
+  font-size: calc(1vh + 1vw + 0.5vmin);
+  text-align: center;
+  background-image: url(floral.png);
+  background-repeat: repeat;
+}
+
+div
+{
+   background-color: white;
+   padding-left: 5%;
+   padding-right: 5%;
+}
+
+h2
+{
+   font-size: calc(2vh + 2vw + 0.5vmin);
+}
+
+.page
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: solid black 1.5px;
+}
+
+.number
+{
+    font-family: 'Muli';
+    font-size: calc(1vh + 1vw + 0.5vmin);
+    width: 90%;
+    padding: 2% 2%;
+    border: solid black 1.5px;
+    margin-bottom: 2%;
+}
+
+.credits
+{
+    text-align: left;
+    font-size: calc(0.75vh + 0.75vw + 0.5vmin);
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 4%;
+}
+
+ul
+{
+    text-align: left;
+    margin-top: 0;
+}
+
+.copyright
+{
+    font-size: calc(0.75vh + 0.75vw + 0.5vmin);
+}
+
+.messages
+{
+     height: calc(7vh + 4vw);
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+}
+
+.company, .digits, .passedLuhn
+{
+    font-size: calc(1vw + 1vh);
+    text-align: left;
+    width: 100%;
+    padding: 0.5%;
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+    overflow: auto;
+}
+
+/* Media Query for landscape screens and a relatively small height */
+@media screen and (max-height: calc(319vw)) and (orientation: landscape)
+{
+    body 
+    {
+      font-size: calc(0.5vh + 0.5vw);
+    }
+
+    h2
+    {
+       font-size: calc(0.75vh + 0.75vw);
+    }
+
+    .number
+    {
+        font-size: calc(0.5vh + 0.5vw);
+    }
+
+    .credits
+    {
+        font-size: calc(0.5vh + 0.5vw);
+    }
+
+    .copyright
+    {
+        font-size: calc(0.5vh + 0.5vw);
+    }
+
+    .messages
+    {
+         height: calc(6vh + 3vw);
+    }
+
+    .company, .digits, .passedLuhn
+    {
+        font-size: calc(0.5vw + 0.5vh);
+    }
+}

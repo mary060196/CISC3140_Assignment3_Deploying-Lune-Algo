@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luhn CC Check - Miriam Briskman for CISC 3140</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='format.css') }}">
+    <script src="{{ url_for('static', filename = 'scripts.js') }}"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body onload="displayYear();">
+
+<div class = "page">
+    <div class = "mainContainer">
+        <h2 class = "title">Credit Card Validation Widget</h2>
+        <h4 class = "instructs">Please enter a credit card &#8470; for company name and validation:</h4>
+        <input type="text" 
+                   class = "number" 
+                   oninput = "verify(this.value)" 
+                   title = "Enter the Credit Card Number Here" 
+                   placeholder = "Enter the Credit Card Number Here"
+                   value = "">
+        <div class = "messages">
+            <div class = "company"></div>
+            <div class = "digits"></div>
+            <div class = "passedLuhn"></div>
+        </div>
+    </div> <!-- Close the "mainContainer" division. -->
+
+    <div class = "copyright">
+       <p class = "credits">Credits:</p>
+           <ul>
+               <li>RAJESH misra (background image)</li>
+               <li>First Styles (credit card icon)</li>
+           </ul>
+       <p class = "copyrightParag" >Copyright © <span class = "year"></span></p>
+    </div> <!-- Close the "copyright" division. -->
+</div> <!-- Close the "page" division. -->
+
+</body>
+
+</html>
