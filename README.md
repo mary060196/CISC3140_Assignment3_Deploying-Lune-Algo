@@ -1,4 +1,40 @@
-﻿# Luhn Algorithm Assignment (UI Version) 
+﻿# Assignment 3: Automated Deployment!
+
+This README.md file is going to be pushed into the GitHub repository 
+```
+https://github.com/mary060196/wow.git
+```
+as an updated. The update is to be named "Update of README File: Assignment 3". If this update succeeds, the 
+```
+Google Cloud Build History
+``` 
+will show a successful building operation and give its log details. Notice:
+- A 
+```
+cloudbuild.yaml
+``` 
+is used within the project to make automated app deploy, so every time a push operation takes place, the deployment is updated.
+- The success of this Assignment 3 is all due to the Quickstart tutorial provided by Google at
+```
+https://cloud.google.com/source-repositories/docs/quickstart-triggering-builds-with-source-repositories
+```
+- I followed this guide from the beginning to the end, except that I used a GitHub repository intead of a Google Cloud repository. In addition, I used the existing files from the project (besides changing the name of the `Python` file to `main.py` and deleting the import of the `webbrowser` library.) 
+- The `app.yaml` file corresponds to the `Python 3.7` version with which the app was written, so it contains only a single line: `runtime: python37`.
+- The `cloudbuild.yaml` file consists of
+```
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy']
+```
+which is what allows integrated deployment at the time `Google Cloud` build the application as a consequence of a push.
+- I would also upload screen-shots that depict the building processes. One image will show the list of most recent builds, and the other will show the details of each build.
+- The website on which this application is being deployed is
+```
+https://luhn-algo.appspot.com
+```
+- A change has been made previously within the `luhn.html` file so that it shows the senstence: `Auto-Updated this with Git and App Engine!` on the webpage. This change also has building record in the building history.
+
+# Luhn Algorithm Assignment (UI Version) 
 
 This is the 2nd assignment in the Brooklyn College Summer 2019 CISC 3140 class. The students have been given two options: either to write a functioning luhn algorithm in the Scheme language, or to do the same but in JavaScript, and besides that also include HTML, CSS and a Python server to make it user-friendly and good looking. I have chosen the second option.
 
